@@ -5,10 +5,6 @@ body{min-height:100vh;min-height:100dvh;background:#3a1f18;color:var(--ink);font
 .scene{position:relative;min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:20px 16px;isolation:isolate}
 .bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;background:#3a1f18}
 .overlay{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 45%,#2a140e80 0%,#1c0c08c4 75%)}
-.video-toggle{position:fixed;right:14px;bottom:14px;z-index:2;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;border:1px solid #f6eddb66;background:#1c0c0899;color:var(--paper);cursor:pointer;opacity:.75;transition:opacity .2s}
-.video-toggle:hover,.video-toggle:focus-visible{opacity:1}
-.video-toggle:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
-.video-toggle svg{width:14px;height:14px}
 .invitation{position:relative;width:min(100%,400px);padding:26px 26px 20px;text-align:center;background:#f6eddbf2;box-shadow:0 20px 60px #0e050366;animation:arrive .8s ease-out both}
 .invitation:before{content:"";position:absolute;inset:8px;border:1px solid #b98c516b;pointer-events:none}
 .eyebrow,.footer,.small-label{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:2.4px}

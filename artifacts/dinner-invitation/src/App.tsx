@@ -1,29 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 const BASE = import.meta.env.BASE_URL;
 
 function App() {
-  const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) { v.pause(); setPlaying(false); return; }
-    v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    if (reduce) { v.pause(); return; }
+    v.play().catch(() => {
+      // Keep the poster visible when the browser blocks autoplay.
+    });
   }, []);
-
-  const toggle = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-    } else {
-      v.pause();
-      setPlaying(false);
-    }
-  };
 
   return (
     <main className="scene">
@@ -37,30 +27,14 @@ function App() {
         playsInline
         preload="metadata"
         aria-hidden="true"
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
       />
       <div className="overlay" aria-hidden="true" />
-      <button
-        type="button"
-        className="video-toggle"
-        onClick={toggle}
-        aria-pressed={playing}
-        aria-label={playing ? 'Pause background video' : 'Play background video'}
-        data-testid="button-video-toggle"
-      >
-        {playing ? (
-          <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="3" width="3" height="10" fill="currentColor" /><rect x="9" y="3" width="3" height="10" fill="currentColor" /></svg>
-        ) : (
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor" /></svg>
-        )}
-      </button>
       <article className="invitation" aria-labelledby="invite-title">
         <p className="eyebrow">A seat at the table, just for you</p>
         <p className="small-label">You're invited to</p>
         <h1 id="invite-title">Dinner <em>night.</em></h1>
         <p className="description">Making it to this page means you're personally invited. Join us for an evening of good food, great company, and conversations that last a little longer.</p>
-        <p className="details">For RSVP details, continue with Google.</p>
+        <p className="details">For RSVP details.</p>
         <a className="google" href="https://www.google.com" target="_blank" rel="noopener noreferrer" id="continue-link" data-testid="link-continue-google">
           <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.560 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z" />
