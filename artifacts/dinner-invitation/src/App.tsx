@@ -24,8 +24,8 @@ function App() {
         <p className="small-label">You're invited to</p>
         <h1 id="invite-title">Dinner<em>night.</em></h1>
         <p className="ampersand" aria-hidden="true">— &amp; —</p>
-        <p className="description">An evening of good food<br />and great company.</p>
-        <p className="details">Details to follow.</p>
+        <p className="description">Making it to this page means you're personally invited. Join us for an evening of good food, great company, and conversations that last a little longer.</p>
+        <p className="details">For RSVP details, continue with Google.</p>
         <div className="rule" aria-hidden="true">✦</div>
         <a className="google" href="#" id="continue-link" data-testid="link-continue-google"
           onClick={(e) => { e.preventDefault(); setShown(true); }}>
