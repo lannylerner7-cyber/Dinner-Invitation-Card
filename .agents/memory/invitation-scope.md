@@ -2,11 +2,11 @@
 name: Invitation scope
 description: User intent and background media constraint for the dinner invitation.
 ---
-The user explicitly wants “Continue with Google” to keep href="#" rather than real authentication, and wants the invitation visitable rather than file-only. Preserve the personally invited and RSVP wording.
+The user now wants “Continue with Google” to navigate to Google.com, replacing the earlier href="#" placeholder request. This is an external link, not real authentication. The invitation should be visitable rather than file-only. Preserve the personally invited and RSVP wording.
 
 **Why:** These are explicit product requirements, not a request to implement sign-in.
 
-**How to apply:** Keep the placeholder behavior unless the user requests real authentication.
+**How to apply:** Keep the Google.com destination unless the user changes it; do not infer a request for real authentication.
 
 The user requested a minimal card fitting phone, tablet and desktop, over a silent 15-second dinner background, and selected standard 720p quality.
 

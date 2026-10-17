@@ -1,1 +1,1 @@
-- [Invitation scope](invitation-scope.md) — Keep Google as a placeholder; compact responsive invitation with a silent dinner background.
+- [Invitation scope](invitation-scope.md) — Google.com link, not authentication; compact responsive invitation with a silent dinner background.
