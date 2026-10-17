@@ -1,0 +1,30 @@
+:root{color-scheme:light;--wine:#713d30;--ink:#633c30;--paper:#f6eddb;--muted:#937764;--gold:#b98c51}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;min-height:100dvh;background:#713d30;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+    .scene{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:48px 24px;background:radial-gradient(ellipse at 50% 35%,#95634a 0%,#794333 47%,#583127 100%)}
+    .invitation{position:relative;width:min(100%,600px);padding:39px 50px 30px;text-align:center;background:var(--paper);box-shadow:0 24px 80px #2f160f45;animation:arrive 1s ease-out both}
+    .invitation:before{content:"";position:absolute;inset:13px;border:1px solid #b98c516b;pointer-events:none}
+    .eyebrow,.footer,.small-label{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;font-size:10px;letter-spacing:3px}
+    .eyebrow{position:relative;margin:3px 0 20px;color:var(--muted)}
+    .illustration{display:block;width:230px;height:175px;margin:0 auto 3px;color:var(--wine)}
+    .flame{transform-origin:120px 39px;animation:flicker 3.8s ease-in-out infinite}
+    .small-label{margin:15px 0 11px;color:var(--muted);font-size:9px;letter-spacing:2.8px}
+    h1{margin:0;font-size:clamp(66px,12vw,94px);line-height:.86;font-weight:400;letter-spacing:-5px}
+    h1 em{display:block;font-weight:400;letter-spacing:-4px;margin-left:-7px}
+    .ampersand{font-size:18px;font-style:italic;color:var(--gold);margin:21px 0 14px}
+    .description{font-size:18px;line-height:1.55;margin:0 auto;max-width:310px}
+    .details{font-size:13px;font-style:italic;color:var(--muted);margin:12px 0 25px}
+    .rule{display:flex;gap:12px;align-items:center;margin:0 auto 23px;max-width:270px;color:var(--gold);font-size:13px}
+    .rule:before,.rule:after{content:"";height:1px;background:#b98c5155;flex:1}
+    .google{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:49px;padding:13px 25px;background:#eee2ca;border:1px solid #bfa17b;border-radius:2px;color:var(--ink);text-decoration:none;font:13px 'Trebuchet MS',sans-serif;letter-spacing:.15px;transition:transform .2s ease}
+    .google:hover{background:#e9dbc0;transform:translateY(-2px)}
+    .google:focus-visible{outline:2px solid var(--wine);outline-offset:5px}
+    .google svg{width:18px;height:18px;flex-shrink:0}
+    .note{margin:12px 0 25px;font:10px/1.5 'Trebuchet MS',sans-serif;color:var(--muted)}
+    .footer{font-size:8px;letter-spacing:2px;color:var(--muted);margin:0}
+    .message{font:12px/1.6 'Trebuchet MS',sans-serif;color:var(--ink);max-width:290px;margin:14px auto 0}
+    .message[hidden]{display:none}
+    @keyframes arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes flicker{0%,100%{transform:rotate(-3deg) scaleY(1)}50%{transform:rotate(4deg) scaleY(.93)}}
+    @media(max-width:480px){.scene{padding:20px 14px}.invitation{padding:33px 25px 28px}.illustration{height:157px;width:210px}.eyebrow{font-size:8px;letter-spacing:2.5px}h1{font-size:78px}.description{font-size:17px}.footer{letter-spacing:1.5px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}

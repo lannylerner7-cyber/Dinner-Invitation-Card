@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Dinner Night Invitation"
+description = "An elegant dinner night invitation with a placeholder Continue with Google link."
+version = "1.0.0"
+id = "artifacts/dinner-invitation"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24159
+
+[services.development]
+run = "pnpm --filter @workspace/dinner-invitation run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dinner-invitation", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dinner-invitation/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24159"
+BASE_PATH = "/"
