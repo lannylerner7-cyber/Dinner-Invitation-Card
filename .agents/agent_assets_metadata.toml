@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "jy5fud3Y0JbrhF5IPZxj2"
+uri = "file://generated-artifacts/dinner-night-invite.html"
+type = "html"
+title = "Dinner Night Invitation"
+description = "Standalone HTML invitation with elegant typography, warm colors, and a Continue with Google button linked to #."
+logical_id = "f7085f7a-13c4-4a81-819a-f5304cddb168"
+content_hash = "sha256:afa6e865f6c8969f42785a334caa986635db7586fb338971a4c5984361130d7c"
+size = 6731
+mtime_ms = 1792236716008
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:a42210d8-f70a-427b-9798-658f749e4c28/f7085f7a-13c4-4a81-819a-f5304cddb168/971f9160-d46b-4299-9703-37c9f616141a"
+storage_version_token = "1792236734619675"
+content_type = "text/html"

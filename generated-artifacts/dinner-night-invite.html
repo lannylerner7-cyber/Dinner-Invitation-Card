@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#713d30">
+  <title>A seat at the table — Dinner night</title>
+  <style>
+    :root{color-scheme:light;--wine:#713d30;--ink:#633c30;--paper:#f6eddb;--muted:#937764;--gold:#b98c51}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;min-height:100dvh;background:#713d30;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+    .scene{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:48px 24px;background:radial-gradient(ellipse at 50% 35%,#95634a 0%,#794333 47%,#583127 100%)}
+    .invitation{position:relative;width:min(100%,600px);padding:39px 50px 30px;text-align:center;background:var(--paper);box-shadow:0 24px 80px #2f160f45;animation:arrive 1s ease-out both}
+    .invitation:before{content:"";position:absolute;inset:13px;border:1px solid #b98c516b;pointer-events:none}
+    .eyebrow,.footer,.small-label{font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;font-size:10px;letter-spacing:3px}
+    .eyebrow{position:relative;margin:3px 0 20px;color:var(--muted)}
+    .illustration{display:block;width:230px;height:175px;margin:0 auto 3px;color:var(--wine)}
+    .flame{transform-origin:120px 39px;animation:flicker 3.8s ease-in-out infinite}
+    .small-label{margin:15px 0 11px;color:var(--muted);font-size:9px;letter-spacing:2.8px}
+    h1{margin:0;font-size:clamp(66px,12vw,94px);line-height:.86;font-weight:400;letter-spacing:-5px}
+    h1 em{display:block;font-weight:400;letter-spacing:-4px;margin-left:-7px}
+    .ampersand{font-size:18px;font-style:italic;color:var(--gold);margin:21px 0 14px}
+    .description{font-size:18px;line-height:1.55;margin:0 auto;max-width:310px}
+    .details{font-size:13px;font-style:italic;color:var(--muted);margin:12px 0 25px}
+    .rule{display:flex;gap:12px;align-items:center;margin:0 auto 23px;max-width:270px;color:var(--gold);font-size:13px}
+    .rule:before,.rule:after{content:"";height:1px;background:#b98c5155;flex:1}
+    .google{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:49px;padding:13px 25px;background:#eee2ca;border:1px solid #bfa17b;border-radius:2px;color:var(--ink);text-decoration:none;font:13px 'Trebuchet MS',sans-serif;letter-spacing:.15px;transition:transform .2s ease}
+    .google:hover{background:#e9dbc0;transform:translateY(-2px)}
+    .google:focus-visible{outline:2px solid var(--wine);outline-offset:5px}
+    .google svg{width:18px;height:18px;flex-shrink:0}
+    .note{margin:12px 0 25px;font:10px/1.5 'Trebuchet MS',sans-serif;color:var(--muted)}
+    .footer{font-size:8px;letter-spacing:2px;color:var(--muted);margin:0}
+    .message{font:12px/1.6 'Trebuchet MS',sans-serif;color:var(--ink);max-width:290px;margin:14px auto 0}
+    .message[hidden]{display:none}
+    @keyframes arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes flicker{0%,100%{transform:rotate(-3deg) scaleY(1)}50%{transform:rotate(4deg) scaleY(.93)}}
+    @media(max-width:480px){.scene{padding:20px 14px}.invitation{padding:33px 25px 28px}.illustration{height:157px;width:210px}.eyebrow{font-size:8px;letter-spacing:2.5px}h1{font-size:78px}.description{font-size:17px}.footer{letter-spacing:1.5px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="scene">
+    <article class="invitation" aria-labelledby="invite-title">
+      <p class="eyebrow">A seat at the table, just for you</p>
+      <svg class="illustration" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 150c35-9 141-9 181 0M39 157c36-7 122-7 163 0" opacity=".35"/>
+          <ellipse cx="121" cy="142" rx="36" ry="7"/><ellipse cx="121" cy="141" rx="26" ry="4" opacity=".45"/>
+          <path d="M115 124h12l5 11h-22l5-11ZM120 124V95m-14 0h28m-24 0 4-8h12l4 8M114 87V50h12v37"/>
+          <path d="M114 55c4 3 8-4 12 0m-8-5v8c0 3 4 3 4 0v-5" opacity=".6"/>
+          <path d="M67 144v-23m-10 23h20m-13-45h6l7 11c4 8-2 14-10 14s-14-6-10-14l7-11Zm-5 12h16"/>
+          <path d="M174 144v-26m-10 26h20m-22-48h24l-2 16c-1 10-19 10-20 0l-2-16Zm2 14h20"/>
+          <path d="M41 136c-3-18-13-29-21-34 1 15 9 28 21 34Zm-4-10c4-15 2-25-2-33-5 14-5 24 2 33Zm2 8-11-18m13 20 4 12"/>
+          <path d="M198 138c1-16 11-30 22-37-1 18-10 31-22 37Zm5-14c-4-13-3-24 1-31 5 13 5 23-1 31Zm-5 14 13-22m-13 22-4 10"/>
+          <path d="m92 54-5-3m8-10-3-4m50 12 5-3m-9-9 3-5" stroke="#b98c51"/>
+        </g>
+        <path class="flame" d="M120 45c-10-5-4-13 1-21-1 9 9 14-1 21Z" fill="#c89850"/>
+        <path d="M120 44c-4-3-1-7 0-10 3 5 4 7 0 10Z" fill="#f6eddb"/>
+      </svg>
+      <p class="small-label">You're invited to</p>
+      <h1 id="invite-title">Dinner<em>night.</em></h1>
+      <p class="ampersand" aria-hidden="true">— &amp; —</p>
+      <p class="description">An evening of good food<br>and great company.</p>
+      <p class="details">Details to follow.</p>
+      <div class="rule" aria-hidden="true">✦</div>
+      <a class="google" href="#" id="continue-link">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65Z"/>
+          <path fill="#FBBC05" d="M10.53 28.59a14.4 14.4 0 0 1 0-9.18l-7.98-6.19A23.85 23.85 0 0 0 0 24c0 3.87.93 7.53 2.56 10.78l7.97-6.19Z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"/>
+        </svg>
+        Continue with Google
+      </a>
+      <p class="note">Just an invitation. No sign-in required.</p>
+      <p class="footer">Come hungry. Stay a little longer.</p>
+      <p class="message" id="invite-message" role="status" hidden>You're in good company. The dinner details will follow — no Google sign-in is connected to this invitation.</p>
+    </article>
+  </main>
+  <script>
+    document.getElementById('continue-link').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.getElementById('invite-message').hidden = false;
+    });
+  </script>
+</body>
+</html>
