@@ -1,0 +1,19 @@
+kind = "design-system"
+previewPath = "/dinner-night-system/"
+title = "Dinner Night Design System"
+description = "Source-faithful colors, type, compact invitation surfaces and links extracted from Dinner Night Invitation, without changing the original app."
+version = "1.0.0"
+id = "artifacts/dinner-night-system"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/dinner-night-system/" ]
+localPort = 23499
+
+[services.development]
+run = "pnpm --filter @workspace/dinner-night-system run dev"
+
+[services.env]
+PORT = "23499"
+BASE_PATH = "/dinner-night-system/"

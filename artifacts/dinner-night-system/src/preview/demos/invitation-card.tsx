@@ -1,0 +1,1 @@
+import { InvitationCard } from '../../components/ui/invitation-card'; export default function Demo(){return <div className="space-y-6"><p>Native article surface, responsive up to 400px, inset border and source shadow.</p><InvitationCard aria-label="Card example"><p>A seat at the table, just for you.</p></InvitationCard></div>}
