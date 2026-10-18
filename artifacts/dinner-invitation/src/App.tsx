@@ -23,8 +23,8 @@ function App() {
       <video
         ref={videoRef}
         className="bg-video"
-        src={`${BASE}api/dinner-media/dinner-night.mp4`}
-        poster={`${BASE}api/dinner-media/dinner-poster.jpg`}
+        src={`${BASE}media/dinner-night.mp4`}
+        poster={`${BASE}media/dinner-poster.jpg`}
         muted
         loop
         playsInline

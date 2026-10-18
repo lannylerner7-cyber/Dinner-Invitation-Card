@@ -19,3 +19,9 @@ Video generation was overloaded on two attempts. The current background uses a g
 **Why:** This delivered a working animated background despite unavailable video generation.
 
 **How to apply:** Do not describe the current background as independently moving dinner footage; a future replacement can use generated video when available.
+
+The user wants the invitation deployable as a static site on Coolify, with media bundled in public assets rather than requiring Replit storage at runtime.
+
+**Why:** They explicitly requested moving the video and attached assets for direct use.
+
+**How to apply:** Keep the invitation independent of backend media endpoints. Public assets are intentionally bundled for portability.
