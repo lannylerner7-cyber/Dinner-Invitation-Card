@@ -1,0 +1,23 @@
+# Only the invitation and its shared design system belong in the build context.
+**
+!Dockerfile
+!package.json
+!pnpm-lock.yaml
+!pnpm-workspace.yaml
+!tsconfig.base.json
+!deploy/
+!deploy/nginx.conf
+!artifacts/
+!artifacts/dinner-invitation/
+!artifacts/dinner-invitation/**
+!artifacts/dinner-night-system/
+!artifacts/dinner-night-system/**
+
+**/node_modules
+**/dist
+**/.replit-artifact
+**/.env
+**/.env.*
+**/*.tsbuildinfo
+**/*.log
+**/.git
