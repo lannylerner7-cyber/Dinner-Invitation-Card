@@ -4,6 +4,8 @@ import {
   type ErrorInfo,
   type ReactNode,
 } from 'react';
+import { InvitationCard } from '@workspace/dinner-night-system/components/ui/invitation-card';
+import { InvitationHeading, InvitationText } from '@workspace/dinner-night-system/components/ui/invitation-text';
 
 export interface ErrorFallbackProps {
   error: Error;
@@ -37,30 +39,30 @@ function toError(value: unknown): Error {
 
 function DefaultFallback({ error, resetError }: ErrorFallbackProps) {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-6">
-      <div className="max-w-lg w-full text-center">
-        <h1 className="text-xl font-semibold text-gray-900">
+    <main className="scene bg-background">
+      <InvitationCard aria-labelledby="error-title">
+        <InvitationText variant="eyebrow">Dinner Night Invitation</InvitationText>
+        <InvitationHeading id="error-title">
           Something went wrong
-        </h1>
-        <p className="mt-2 text-sm text-gray-600">
-          This part of the app hit an error. The rest of the app is still
-          running.
-        </p>
+        </InvitationHeading>
+        <InvitationText>
+          We couldn't display your invitation. Please try again.
+        </InvitationText>
         {/* Dev only: messages can carry API responses and other internals. */}
         {import.meta.env.DEV ? (
-          <pre className="mt-4 overflow-x-auto rounded bg-gray-100 p-3 text-left text-xs text-gray-800">
+          <pre className="mt-4 overflow-x-auto bg-muted p-3 text-left text-xs text-foreground">
             {error.message || String(error)}
           </pre>
         ) : null}
         <button
           type="button"
           onClick={resetError}
-          className="mt-4 rounded bg-gray-900 px-4 py-2 text-sm text-white hover:bg-gray-700"
+          className="mt-4 min-h-11 rounded-lg border border-border bg-secondary px-5 py-3 font-sans text-sm text-secondary-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
         >
           Try again
         </button>
-      </div>
-    </div>
+      </InvitationCard>
+    </main>
   );
 }
 
