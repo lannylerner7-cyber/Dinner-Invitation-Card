@@ -1,0 +1,110 @@
+2026-Oct-18 11:00:02 Docker 29.8.1 with BuildKit and Buildx detected on deployment server (localhost).
+2026-Oct-18 11:00:02 Starting deployment of lannylerner7-cyber/Dinner-Invitation-Card:main to localhost.
+2026-Oct-18 11:00:03 Preparing container with helper image: docker.io/coollabsio/coolify-helper:1.0.17
+2026-Oct-18 11:00:04 [CMD]: docker stop --timeout=30 't5cjpndhbbdzkfle1e82use6'
+2026-Oct-18 11:00:04 Error response from daemon: No such container: t5cjpndhbbdzkfle1e82use6
+2026-Oct-18 11:00:06 [CMD]: docker run -d --network 'coolify' --name t5cjpndhbbdzkfle1e82use6 --rm -v /root/.docker/buildx:/root/.docker/buildx -v /var/run/docker.sock:/var/run/docker.sock docker.io/coollabsio/coolify-helper:1.0.17
+2026-Oct-18 11:00:06 2b3be1c7ea563d03532a26aff6bc4e99062ed20df495e4a7631a06c6de7fe3c9
+2026-Oct-18 11:00:18 [CMD]: docker exec t5cjpndhbbdzkfle1e82use6 bash -c 'GIT_SSH_COMMAND="ssh -o ConnectTimeout=30 -p 22 -o Port=22 -o LogLevel=ERROR -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git ls-remote '\''https://github.com/lannylerner7-cyber/Dinner-Invitation-Card'\'' '\''refs/heads/main'\'''
+2026-Oct-18 11:00:18 8c196b87a5511f056f5a450adb0b458de5937648 refs/heads/main
+2026-Oct-18 11:00:18 [CMD]: docker images -q bwn42gdcf9z3r1zwgcmga5es:8c196b87a5511f056f5a450adb0b458de5937648 2>/dev/null
+2026-Oct-18 11:00:18 e1ec8f30833f
+2026-Oct-18 11:00:19 Build configuration changed. Rebuilding image.
+2026-Oct-18 11:00:19 ----------------------------------------
+2026-Oct-18 11:00:19 Importing lannylerner7-cyber/Dinner-Invitation-Card:main (commit sha 8c196b87a5511f056f5a450adb0b458de5937648) to /artifacts/t5cjpndhbbdzkfle1e82use6.
+2026-Oct-18 11:00:19 [CMD]: docker exec t5cjpndhbbdzkfle1e82use6 bash -c 'git clone --depth=1 --recurse-submodules --shallow-submodules -b '\''main'\'' '\''https://github.com/lannylerner7-cyber/Dinner-Invitation-Card'\'' '\''/artifacts/t5cjpndhbbdzkfle1e82use6'\'' && cd '\''/artifacts/t5cjpndhbbdzkfle1e82use6'\'' && GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git fetch --depth=1 origin '\''8c196b87a5511f056f5a450adb0b458de5937648'\'' && git -c advice.detachedHead=false checkout '\''8c196b87a5511f056f5a450adb0b458de5937648'\'' >/dev/null 2>&1 && cd '\''/artifacts/t5cjpndhbbdzkfle1e82use6'\'' && if [ -f .gitmodules ]; then sed -i "s#[A-Za-z0-9._-]*@\(.*\):#https://\1/#g" '\''/artifacts/t5cjpndhbbdzkfle1e82use6'\''/.gitmodules || true && git submodule sync && GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git submodule update --init --recursive --depth=1; fi && cd '\''/artifacts/t5cjpndhbbdzkfle1e82use6'\'' && GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git lfs pull'
+2026-Oct-18 11:00:19 Cloning into '/artifacts/t5cjpndhbbdzkfle1e82use6'...
+2026-Oct-18 11:00:20 From https://github.com/lannylerner7-cyber/Dinner-Invitation-Card
+2026-Oct-18 11:00:20 * branch 8c196b87a5511f056f5a450adb0b458de5937648 -> FETCH_HEAD
+2026-Oct-18 11:00:22 [CMD]: docker exec t5cjpndhbbdzkfle1e82use6 bash -c 'cd /artifacts/t5cjpndhbbdzkfle1e82use6 && git log -1 '\''8c196b87a5511f056f5a450adb0b458de5937648'\'' --pretty=%B'
+2026-Oct-18 11:00:22 Remove unused dinner invitation UI components
+2026-Oct-18 11:00:22 Replit-Commit-Author: Agent
+2026-Oct-18 11:00:23 Creating build-time .env file in /artifacts (outside Docker context).
+2026-Oct-18 11:00:23 ----------------------------------------
+2026-Oct-18 11:00:23 Static deployment. Copying static assets to the image.
+2026-Oct-18 11:00:23 Pulling latest image (nginx:alpine) from the registry.
+2026-Oct-18 11:00:27 [CMD]: docker exec t5cjpndhbbdzkfle1e82use6 bash -c 'docker pull '\''nginx:alpine'\'''
+2026-Oct-18 11:00:27 alpine: Pulling from library/nginx
+2026-Oct-18 11:00:27 Digest: sha256:892bb2152464f0c5d8972593a5f5afaf8054552580b699d95f8ff4af08c2d33d
+2026-Oct-18 11:00:27 Status: Image is up to date for nginx:alpine
+2026-Oct-18 11:00:27 docker.io/library/nginx:alpine
+2026-Oct-18 11:00:28 [CMD]: docker exec t5cjpndhbbdzkfle1e82use6 bash -c 'cat /artifacts/build.sh'
+2026-Oct-18 11:00:28 DOCKER_BUILDKIT=1 docker build --add-host coolify:10.0.1.4 --add-host coolify-db:10.0.1.3 --add-host coolify-redis:10.0.1.2 --add-host coolify-sentinel:10.0.1.10 --add-host kp2colryt82rehd1ftghxww1-vault-mainnet-engine-1:10.0.1.11 --network host -f /artifacts/t5cjpndhbbdzkfle1e82use6/Dockerfile --progress plain -t bwn42gdcf9z3r1zwgcmga5es:8c196b87a5511f056f5a450adb0b458de5937648 /artifacts/t5cjpndhbbdzkfle1e82use6
+2026-Oct-18 11:00:56 [CMD]: docker exec t5cjpndhbbdzkfle1e82use6 bash -c 'bash /artifacts/build.sh'
+2026-Oct-18 11:00:56 #0 building with "default" instance using docker driver
+2026-Oct-18 11:00:56
+2026-Oct-18 11:00:56 #1 [internal] load build definition from Dockerfile
+2026-Oct-18 11:00:58 #1 transferring dockerfile:
+2026-Oct-18 11:00:59 #1 transferring dockerfile: 436B 1.0s done
+2026-Oct-18 11:01:00 #1 DONE 4.3s
+2026-Oct-18 11:01:02 #2 [internal] load metadata for docker.io/library/nginx:alpine
+2026-Oct-18 11:01:32 #2 DONE 29.7s
+2026-Oct-18 11:01:33 #3 [internal] load .dockerignore
+2026-Oct-18 11:01:33 #3 DONE 0.0s
+2026-Oct-18 11:01:33 #3 [internal] load .dockerignore
+2026-Oct-18 11:01:34 #3 transferring context:
+2026-Oct-18 11:01:37 #3 transferring context: 2B 2.2s done
+2026-Oct-18 11:01:37 #3 DONE 3.4s
+2026-Oct-18 11:01:39 #4 [1/8] FROM docker.io/library/nginx:alpine@sha256:892bb2152464f0c5d8972593a5f5afaf8054552580b699d95f8ff4af08c2d33d
+2026-Oct-18 11:01:39 #4 ...
+2026-Oct-18 11:01:39
+2026-Oct-18 11:01:39 #5 [internal] load build context
+2026-Oct-18 11:01:39 #5 DONE 0.0s
+2026-Oct-18 11:01:39 #4 [1/8] FROM docker.io/library/nginx:alpine@sha256:892bb2152464f0c5d8972593a5f5afaf8054552580b699d95f8ff4af08c2d33d
+2026-Oct-18 11:01:39 #4 resolve docker.io/library/nginx:alpine@sha256:892bb2152464f0c5d8972593a5f5afaf8054552580b699d95f8ff4af08c2d33d
+2026-Oct-18 11:01:40 #4 resolve docker.io/library/nginx:alpine@sha256:892bb2152464f0c5d8972593a5f5afaf8054552580b699d95f8ff4af08c2d33d 1.3s done
+2026-Oct-18 11:01:40 #4 DONE 1.7s
+2026-Oct-18 11:01:40
+2026-Oct-18 11:01:40 #5 [internal] load build context
+2026-Oct-18 11:01:42 #5 transferring context: 3.55MB 1.5s done
+2026-Oct-18 11:01:42 #5 DONE 2.8s
+2026-Oct-18 11:01:42 #6 [2/8] WORKDIR /usr/share/nginx/html/
+2026-Oct-18 11:01:42 #6 CACHED
+2026-Oct-18 11:01:42
+2026-Oct-18 11:01:42 #7 [3/8] COPY . .
+2026-Oct-18 11:01:43 #7 DONE 1.5s
+2026-Oct-18 11:01:44 #8 [4/8] RUN rm -f /usr/share/nginx/html/nginx.conf
+2026-Oct-18 11:01:45 #8 DONE 1.5s
+2026-Oct-18 11:01:45 #9 [5/8] RUN rm -f /usr/share/nginx/html/Dockerfile
+2026-Oct-18 11:01:45 #9 DONE 0.6s
+2026-Oct-18 11:01:46 #10 [6/8] RUN rm -f /usr/share/nginx/html/docker-compose.yaml
+2026-Oct-18 11:01:46 #10 DONE 0.8s
+2026-Oct-18 11:01:47 #11 [7/8] RUN rm -f /usr/share/nginx/html/.env
+2026-Oct-18 11:01:56 #11 DONE 9.6s
+2026-Oct-18 11:01:56 #12 [8/8] COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+2026-Oct-18 11:01:57 #12 DONE 0.6s
+2026-Oct-18 11:01:57 #13 exporting to image
+2026-Oct-18 11:01:57 #13 exporting layers
+2026-Oct-18 11:02:03 #13 exporting layers 6.0s done
+2026-Oct-18 11:02:03 #13 exporting manifest sha256:0d9b17235dfe636f01efa0dfb621394f8e40fefad74a815647ab93163d1aa72f
+2026-Oct-18 11:02:03 #13 exporting manifest sha256:0d9b17235dfe636f01efa0dfb621394f8e40fefad74a815647ab93163d1aa72f 0.2s done
+2026-Oct-18 11:02:03 #13 exporting config sha256:a6e245afe43fda7ee6a9c4fbeca28a9eadcf192a2681076397941448adf85eb9
+2026-Oct-18 11:02:03 #13 exporting config sha256:a6e245afe43fda7ee6a9c4fbeca28a9eadcf192a2681076397941448adf85eb9 0.2s done
+2026-Oct-18 11:02:04 #13 exporting attestation manifest sha256:6d3d9d31900461ed87bd7d119c04ea384ccb5445e506f6d64fe5cc37d64bd4c0
+2026-Oct-18 11:02:04 #13 exporting attestation manifest sha256:6d3d9d31900461ed87bd7d119c04ea384ccb5445e506f6d64fe5cc37d64bd4c0 0.3s done
+2026-Oct-18 11:02:04 #13 exporting manifest list sha256:8ddc17f73f22f2070053e9869bc6cffadceaf736c25acf9a3f0bb6070260b261
+2026-Oct-18 11:02:04 #13 exporting manifest list sha256:8ddc17f73f22f2070053e9869bc6cffadceaf736c25acf9a3f0bb6070260b261 0.2s done
+2026-Oct-18 11:02:04 #13 naming to docker.io/library/bwn42gdcf9z3r1zwgcmga5es:8c196b87a5511f056f5a450adb0b458de5937648
+2026-Oct-18 11:02:05 #13 naming to docker.io/library/bwn42gdcf9z3r1zwgcmga5es:8c196b87a5511f056f5a450adb0b458de5937648 0.0s done
+2026-Oct-18 11:02:05 #13 unpacking to docker.io/library/bwn42gdcf9z3r1zwgcmga5es:8c196b87a5511f056f5a450adb0b458de5937648
+2026-Oct-18 11:02:08 #13 unpacking to docker.io/library/bwn42gdcf9z3r1zwgcmga5es:8c196b87a5511f056f5a450adb0b458de5937648 3.4s done
+2026-Oct-18 11:02:10 #13 DONE 13.6s
+2026-Oct-18 11:02:30 Building docker image completed.
+2026-Oct-18 11:02:30 Creating .env file with runtime variables for container.
+2026-Oct-18 11:02:31 ----------------------------------------
+2026-Oct-18 11:02:31 Rolling update started.
+2026-Oct-18 11:02:35 [CMD]: docker exec t5cjpndhbbdzkfle1e82use6 bash -c 'COOLIFY_URL='\''https://dinner_night.drive0g5folderaccess.com'\'' COOLIFY_FQDN='\''dinner_night.drive0g5folderaccess.com'\'' COOLIFY_BRANCH='\''main'\'' COOLIFY_RESOURCE_UUID='\''bwn42gdcf9z3r1zwgcmga5es'\'' docker compose --project-name bwn42gdcf9z3r1zwgcmga5es --project-directory /artifacts/t5cjpndhbbdzkfle1e82use6 -f /artifacts/t5cjpndhbbdzkfle1e82use6/docker-compose.yaml up --build -d'
+2026-Oct-18 11:02:35 time="2026-10-18T11:02:35Z" level=warning msg="Found orphan containers (bwn42gdcf9z3r1zwgcmga5es-20261018T105632) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+2026-Oct-18 11:02:35 Container bwn42gdcf9z3r1zwgcmga5es-20261018T105956 Creating
+2026-Oct-18 11:02:35 bwn42gdcf9z3r1zwgcmga5es-20261018T105956 Your kernel does not support memory swappiness capabilities or the cgroup is not mounted. Memory swappiness discarded.
+2026-Oct-18 11:02:35 Container bwn42gdcf9z3r1zwgcmga5es-20261018T105956 Created
+2026-Oct-18 11:02:35 Container bwn42gdcf9z3r1zwgcmga5es-20261018T105956 Starting
+2026-Oct-18 11:02:37 Container bwn42gdcf9z3r1zwgcmga5es-20261018T105956 Started
+2026-Oct-18 11:02:37 New container started.
+2026-Oct-18 11:02:37 Removing old containers.
+2026-Oct-18 11:02:40 [CMD]: docker stop --timeout=30 'bwn42gdcf9z3r1zwgcmga5es-20261018T105632'
+2026-Oct-18 11:02:40 bwn42gdcf9z3r1zwgcmga5es-20261018T105632
+2026-Oct-18 11:02:45 [CMD]: bash -c 'if command -v timeout >/dev/null 2>&1; then output=$(timeout -k 10s 60s docker rm -f '\''bwn42gdcf9z3r1zwgcmga5es-20261018T105632'\'' 2>&1); exit_code=$?; else output='\'''\''; exit_code=124; fi; if [ "$exit_code" -eq 124 ]; then echo '\''__COOLIFY_CONTAINER_REMOVE_TIMEOUT__'\''; elif [ "$exit_code" -ne 0 ] && printf '\''%s'\'' "$output" | grep -q '\''No such container:'\''; then exit 0; elif [ "$exit_code" -ne 0 ]; then printf '\''%s\n'\'' "$output" >&2; else printf '\''%s\n'\'' "$output"; fi; exit $exit_code'
+2026-Oct-18 11:02:45 bwn42gdcf9z3r1zwgcmga5es-20261018T105632
+2026-Oct-18 11:02:45 Rolling update completed.
+2026-Oct-18 11:02:45 Gracefully shutting down build container: t5cjpndhbbdzkfle1e82use6
