@@ -47,7 +47,7 @@ function App() {
           </svg>
           Continue with Google
         </InvitationLink>
-        <InvitationText variant="note">Opens Google in a new tab.</InvitationText>
+        <InvitationText variant="note">Continue with venue details.</InvitationText>
         <InvitationText variant="footer">Come hungry. Stay a little longer.</InvitationText>
       </InvitationCard>
     </main>
