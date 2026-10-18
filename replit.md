@@ -1,6 +1,6 @@
-# [Project name]
+# Dinner Night Invitation
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A compact dinner invitation with a silent video background and a link to Google.com.
 
 ## Run & Operate
 
@@ -22,7 +22,22 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+### Active invitation
+
+- `artifacts/dinner-invitation/` — the actual static website.
+- `artifacts/dinner-invitation/src/App.tsx` — the single invitation screen.
+- `artifacts/dinner-invitation/public/media/` — canonical video, poster, and original image. These files ship with the static site.
+- `artifacts/dinner-night-system/` — the active shared design system, imported by the website. This is not a duplicate.
+- `artifacts/dinner-night-system/docs/references/` — retained design evidence, not another running website.
+- Root `package.json`, `pnpm-workspace.yaml`, `pnpm-lock.yaml`, and `tsconfig.base.json` — required workspace build configuration. Keep the repository root as the install context.
+
+### Retained but not needed by the static invitation
+
+- `artifacts/api-server/` and `lib/` — backend, database and generated API scaffolding.
+- `artifacts/mockup-sandbox/` — separate Canvas starter, not the live invitation.
+- `generated-artifacts/dinner-night-invite.html` — original downloadable standalone invitation. Retained as a distinct earlier deliverable, not used by the website.
+
+The user chose a light cleanup: keep these separate projects intact. The website no longer imports the generated API client.
 
 ## Architecture decisions
 
@@ -34,7 +49,7 @@ _Describe the high-level user-facing capabilities of this app once they exist._
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+Keep the active design system. Cleanup is limited to duplicates and unused invitation-app files; do not remove the backend or Canvas artifacts without further approval. No SSH key is needed.
 
 ## Gotchas
 

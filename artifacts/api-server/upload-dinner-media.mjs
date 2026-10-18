@@ -17,7 +17,7 @@ const publicPath = process.env.PUBLIC_OBJECT_SEARCH_PATHS?.split(",")[0];
 if (!publicPath) throw new Error("Public storage is not configured");
 const [bucket, ...prefix] = publicPath.replace(/^\/+/, "").split("/");
 for (const name of ["dinner-night.mp4", "dinner-poster.jpg"]) {
-  await client.bucket(bucket).upload(`generated-artifacts/${name}`, {
+  await client.bucket(bucket).upload(`artifacts/dinner-invitation/public/media/${name}`, {
     destination: [...prefix, "dinner", name].join("/"),
     metadata: { contentType: name.endsWith(".mp4") ? "video/mp4" : "image/jpeg" },
   });
